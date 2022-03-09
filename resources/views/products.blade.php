@@ -75,7 +75,7 @@
                     <td>{{ $pro->fournisseur_id }}</td>
                     <td>{{ $pro->dates }}</td>
                     <td>
-                    <button type="button" class="btn btn-info edit">Modifier</button>
+                    <button type="button" id="button" class="btn btn-info edit">edit</button> |
                     </td>
                 </tr>
            @endforeach

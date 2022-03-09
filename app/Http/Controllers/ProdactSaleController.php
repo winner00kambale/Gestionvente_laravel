@@ -10,7 +10,7 @@ class ProdactSaleController extends Controller
         $sale = \DB::select("SELECT * FROM products_sale order by id DESC");
         $stock = \DB::select("SELECT * FROM stock order by id DESC");
         $panier = \DB::select("SELECT * FROM panier order by id DESC");
-        $client = \DB::select("SELECT * FROM clients order by id DESC");
+        $client = \DB::select("SELECT * FROM clients order by id ASC");
         $prod = \DB::select("SELECT * FROM categories order by id DESC");
         return view('sale',compact('sale','stock','panier','client','prod'));
     }

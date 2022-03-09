@@ -13,6 +13,29 @@ body {
     font-size: 13px;
 }
 
+#mondiv {
+    height: 95px;
+    border-radius: 20px;
+}
+
+.py-3 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+#log {
+    height: 40px;
+}
+
+.py-4 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+.text-end {
+    text-align: right !important;
+}
+
 ul li {
     list-style: none;
 }
@@ -930,7 +953,7 @@ ul.top-menu>li>a:focus {
     border-top: 1px dashed #dbdce0;
     display: block;
     /* height: 58px; */
-    width: 100%;
+    width: 95%;
 }
 
 .y-axis li:last-child {
@@ -2810,6 +2833,10 @@ ul.labels-info li img {
     cursor: pointer;
 }
 
+.table tr>td {
+    text-align: center;
+}
+
 .table-inbox tr td .fa-star.inbox-started,
 .table-inbox tr td .fa-star:hover {
     color: #f78a09;
@@ -3570,6 +3597,14 @@ ul.chat-available-user li a:hover {
 #BodyContainer {
     background: #fafbfc;
     height: 508px;
+}
+
+#dash {
+    border: 2px solid #e7e7e7;
+    border-radius: 20px;
+    height: 200px;
+    background: #ffffff;
+    overflow-y: scroll;
 }
 
 .anyClass {

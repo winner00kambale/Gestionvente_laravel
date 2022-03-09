@@ -21,7 +21,8 @@ use App\Http\Controllers\CategoriesController;
 |
 */
 
-Route::get('/',[MasterController::class,'index'])->name('master.index');
+// Route::get('/',[MasterController::class,'index'])->name('master.index');
+Route::get('/',[MasterController::class,'index'])->name('dashboard.index');
 Route::get('/client/index',[ClientsController::class,'index'])->name('client.index');
 Route::get('/fournisseur/index',[FournisseursController::class,'index'])->name('fournisseur.index');
 Route::get('/products/index',[ProductsController::class,'index'])->name('products.index');

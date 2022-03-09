@@ -44,7 +44,7 @@
               <p class="centered"><a href="#"><img src="{{ asset('img/logo.PNG') }}" class="img-circle" width="80"></a></p>
               <hr>
               <li class="mt">
-                <a class="active" href="{{ route('master.index') }}">
+                <a class="active" href="{{ route('dashboard.index') }}">
                   <i class="fa fa-dashboard"></i>
                   <span>Dashboard</span>
                   </a>
