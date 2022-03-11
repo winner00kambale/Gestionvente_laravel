@@ -10,6 +10,8 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProdactSaleController;
 use App\Http\Controllers\AlertStockController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,9 +22,10 @@ use App\Http\Controllers\CategoriesController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/',[UserController::class,'index'])->name('login.index');
+Route::post('/user/authenticate',[UserController::class,'authenticate'])->name('login.authenticate');
 // Route::get('/',[MasterController::class,'index'])->name('master.index');
-Route::get('/',[MasterController::class,'index'])->name('dashboard.index');
+Route::get('/dashboard/index',[MasterController::class,'index'])->name('dashboard.index');
 Route::get('/client/index',[ClientsController::class,'index'])->name('client.index');
 Route::get('/fournisseur/index',[FournisseursController::class,'index'])->name('fournisseur.index');
 Route::get('/products/index',[ProductsController::class,'index'])->name('products.index');

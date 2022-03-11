@@ -8,7 +8,7 @@
             <div class="row">
               <div class="col-8">
                 <div class="numbers">
-                  <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Money</p>
+                  <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Sales</p>
                   <h5 class="font-weight-bolder mb-0">
                     $53,000
                     <span class="text-success text-sm font-weight-bolder">+55%</span>
@@ -32,7 +32,7 @@
             <div class="row">
               <div class="col-8">
                 <div class="numbers">
-                  <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Users</p>
+                  <p class="text-sm mb-0 text-capitalize font-weight-bold">Clients</p>
                   <h5 class="font-weight-bolder mb-0">
                     2,300
                     <span class="text-success text-sm font-weight-bolder">+3%</span>
@@ -101,10 +101,9 @@
     </div>
 </div>
 <div class="row">
-    {{-- <div class="col-1"></div> --}}
     <div class="col-7">
         <div id="dash" class=" pt-2 container">
-            <h3>Alert Stock</h3>
+            <h3 style="color: brown">Alert Stock</h3>
             <table class="table table-striped table-hover table-sm table-bordered">
                 <thead>
                     <tr>

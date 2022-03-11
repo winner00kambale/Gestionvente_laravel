@@ -32,10 +32,6 @@ body {
     padding-bottom: 1.5rem !important;
 }
 
-.text-end {
-    text-align: right !important;
-}
-
 ul li {
     list-style: none;
 }
@@ -2198,7 +2194,7 @@ ul li {
     margin: 0;
     padding: 25px 20px;
     text-align: center;
-    background: #4ecdc4;
+    background: #0063AA;
     border-radius: 5px 5px 0 0;
     -webkit-border-radius: 5px 5px 0 0;
     color: #fff;
