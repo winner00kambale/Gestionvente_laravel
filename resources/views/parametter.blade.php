@@ -5,6 +5,9 @@
         <h3>Stock de securite</h3>
         <form method="POST" action="{{ route("alert.store") }}">
             @csrf
+            @if(\Session::has('message'))
+                  <div style="text-align: center" class="alert alert-danger">{{ \Session::get('message') }}</div>
+                @endif
             <div class="form-group">
                 <input type="number" name="nombre_sec" id="nombre_sec" min="0" oninput="this.value=Math.abs(this.value)" class="form-control btn-round" required/>
             </div>
@@ -31,18 +34,10 @@
         <h3>Inscripption des utilisateurs</h3>
     <form>
         <div class="form-group">
-            <label for="nom">nom</label>
-            <input type="text" name="nom" id="nom" class="form-control btn-round">
             <label for="username">username</label>
             <input type="text" name="username" id="username" class="form-control btn-round">
             <label for="password">password</label>
             <input type="password" name="password" id="password" class="form-control btn-round">
-            <label for="acces">roles</label>
-            <select name="acces" id="acces" class="form-control btn-round">
-                <option value=""></option>
-                <option value="admin">admin</option>
-                <option value="autre">autre</option>
-            </select>
             <label for="mail">mail</label>
             <input type="mail" name="mail" id="mail" class="form-control btn-round">
         </div>

@@ -30,15 +30,13 @@
                     <td>{{ $item->avenue }}</td>
                     <td>{{ $item->telephone }}</td>
                     <td>
-                        <button type="button" id="button" class="btn btn-info edit">edit</button>|
-                        <a id="edit">delete</a>
+                        <button type="button" id="button" class="btn btn-info edit">edit</button>
                     </td>
                 </tr>
                  @endforeach
             </tbody>
         </table>
 @endsection
-
 @section('modal')  
  <!-- Modal d'insertion -->
  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -49,27 +47,35 @@
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="nom">nom</label>
-                        <input type="text" name="nom" id="nom" class="form-control btn-round">
-                        <label for="postnom">postnom</label>
-                        <input type="text" name="postnom" id="postnom" class="form-control btn-round">
-                        <label for="prenom">prenom</label>
-                        <input type="text" name="prenom" id="prenom" class="form-control btn-round">
-                        <label for="sexe">sexe</label>
-                        <select name="sexe" id="sexe" class="form-control btn-round">
-                            <option value="m">M</option>
-                            <option value="f">F</option>
-                        </select>
-                        <label for="quartier">quartier</label>
-                        <input type="text" name="quartier" id="quartier" class="form-control btn-round">
-                        <label for="avenue">avenue</label>
-                        <input type="text" name="avenue" id="avenue" class="form-control btn-round">
-                        <label for="telephone">telephone</label>
-                        <input type="tel" name="telephone" id="telephone" class="form-control btn-round">
+                <form id="modal_insert">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="nom">nom</label>
+                                <input type="text" name="nom" id="nom" class="form-control btn-round">
+                                <label for="postnom">postnom</label>
+                                <input type="text" name="postnom" id="postnom" class="form-control btn-round">
+                                <label for="prenom">prenom</label>
+                                <input type="text" name="prenom" id="prenom" class="form-control btn-round">
+                                <label for="sexe">sexe</label>
+                                <select name="sexe" id="sexe" class="form-control btn-round">
+                                    <option value="m">M</option>
+                                    <option value="f">F</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="quartier">quartier</label>
+                                <input type="text" name="quartier" id="quartier" class="form-control btn-round">
+                                <label for="avenue">avenue</label>
+                                <input type="text" name="avenue" id="avenue" class="form-control btn-round">
+                                <label for="telephone">telephone</label>
+                                <input type="tel" name="telephone" id="telephone" class="form-control btn-round">
+                            </div>
+                            <input type="submit" value="Enregistrer" id="button" class="btn btn-round">
+                        </div>
                     </div>
-                    <input type="submit" value="Enregistrer" id="button" class="btn btn-round">
                 </form>
             </div>
         </div>
@@ -87,27 +93,36 @@
             <div class="modal-body">
                 <form method="POST" action="{{ route('client.update') }}">
                     @csrf
-                    <div class="form-group">
-                        <input type="hidden" name="id" id="id" value=""> <br>
-                        <label for="nom">nom</label>
-                        <input type="text" name="nom" id="mod_nom" value="" class="form-control btn-round">
-                        <label for="postnom">postnom</label>
-                        <input type="text" name="postnom" id="mod_postnom" value="" class="form-control btn-round">
-                        <label for="prenom">prenom</label>
-                        <input type="text" name="prenom" id="mod_prenom" value="" class="form-control btn-round">
-                        <label for="sexe">sexe</label>
-                        <select name="sexe" id="mod_sexe" class="form-control btn-round">
-                            <option value="m">M</option>
-                            <option value="f">F</option> 
-                        </select>
-                        <label for="quartier">quartier</label>
-                        <input type="text" name="quartier" id="mod_quartier" value="" class="form-control btn-round">
-                        <label for="avenue">avenue</label>
-                        <input type="text" name="avenue" id="mod_avenue" value="" class="form-control btn-round">
-                        <label for="telephone">telephone</label>
-                        <input type="tel" name="telephone" id="mod_telephone" value="" class="form-control btn-round">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <input type="hidden" name="id" id="id" value=""> <br>
+                            <label for="nom">nom</label>
+                            <input type="text" name="nom" id="mod_nom" value="" class="form-control btn-round">
+                            <label for="postnom">postnom</label>
+                            <input type="text" name="postnom" id="mod_postnom" value="" class="form-control btn-round">
+                            <label for="prenom">prenom</label>
+                            <input type="text" name="prenom" id="mod_prenom" value="" class="form-control btn-round">
+                            <label for="sexe">sexe</label>
+                            <select name="sexe" id="mod_sexe" class="form-control btn-round">
+                                <option value="m">M</option>
+                                <option value="f">F</option> 
+                            </select>
+                            </div>
+                        </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <br>
+                            <label for="quartier">quartier</label>
+                            <input type="text" name="quartier" id="mod_quartier" value="" class="form-control btn-round">
+                            <label for="avenue">avenue</label>
+                            <input type="text" name="avenue" id="mod_avenue" value="" class="form-control btn-round">
+                            <label for="telephone">telephone</label>
+                            <input type="tel" name="telephone" id="mod_telephone" value="" class="form-control btn-round">
+                        </div>
+                            <input type="submit" id="button" value="Update" class="btn btn-info btn-round">
                     </div>
-                    <input type="submit" id="button" value="Update" class="btn btn-info btn-round">
+                    </div> 
                 </form>
             </div>
         </div>
@@ -116,7 +131,7 @@
 @endsection
 @section('monscript')
   <script>
-    $('#monformulaire').submit(function(event){
+    $('#modal_insert').submit(function(event){
         event.preventDefault();
         $.ajax({
             url : '{{ route("clients.store") }}',
@@ -129,7 +144,7 @@
             
             success : function(data){
                 alert('Inserted succes');
-                $('#monformulaire')[0].reset();
+                $('#modal_insert')[0].reset();
             }
         });
     });

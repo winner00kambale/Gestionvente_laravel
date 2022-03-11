@@ -17,6 +17,6 @@ class AlertStockController extends Controller
         \DB::statement("call st_securite(?)",[
             $request->nombre_sec
         ]);
-        return response()->json(['message' => 'inserted succes']);   
+        return back()->with('message','Insertion avec succes');   
     }
 }

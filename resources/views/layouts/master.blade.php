@@ -26,7 +26,7 @@
           <div class="mt-3">
             <div class="top-menu">
               <ul class="nav pull-right top-menu">
-                <li><a class="logout" href="{{route('login.index')}}">Logout</a></li>
+                <li><a class="logout" href="{{route('login')}}">Logout</a></li>
               </ul>
             </div>
           </div>
@@ -42,6 +42,7 @@
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
               <p class="centered"><a href="#"><img src="{{ asset('img/logo.PNG') }}" class="img-circle" width="80"></a></p>
+              <p class="centered">{{ Auth::user()->email }}</p>
               <hr>
               <li class="mt">
                 <a class="active" href="{{ route('dashboard.index') }}">

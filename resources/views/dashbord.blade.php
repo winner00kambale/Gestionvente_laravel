@@ -9,10 +9,12 @@
               <div class="col-8">
                 <div class="numbers">
                   <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Sales</p>
+                     @foreach ($nombre_achat as $nbr)
                   <h5 class="font-weight-bolder mb-0">
-                    $53,000
-                    <span class="text-success text-sm font-weight-bolder">+55%</span>
+                    {{ $nbr->nbr }}
                   </h5>
+                  <p class="text-info text-lg">Date : {{ $nbr->date }}</p>
+                     @endforeach
                 </div>
               </div>
               <div class="col-4 text-end">
@@ -33,10 +35,12 @@
               <div class="col-8">
                 <div class="numbers">
                   <p class="text-sm mb-0 text-capitalize font-weight-bold">Clients</p>
+                     @foreach ($nbrclient as $client)
                   <h5 class="font-weight-bolder mb-0">
-                    2,300
-                    <span class="text-success text-sm font-weight-bolder">+3%</span>
+                    {{ $client->nbrclient }}
                   </h5>
+                  <p class="text-info text-lg">Date : {{ $client->date }}</p>
+                     @endforeach
                 </div>
               </div>
               <div class="col-4 text-end">
@@ -56,11 +60,13 @@
             <div class="row">
               <div class="col-8">
                 <div class="numbers">
-                  <p class="text-sm mb-0 text-capitalize font-weight-bold">New Clients</p>
+                  <p class="text-sm mb-0 text-capitalize font-weight-bold">Supplier number</p>
+                  @foreach ($nbrfournisseur as $nbrfour)
                   <h5 class="font-weight-bolder mb-0">
-                    +3,462
-                    <span class="text-danger text-sm font-weight-bolder">-2%</span>
+                    {{ $nbrfour->nbrfour }}
                   </h5>
+                  <p class="text-info text-lg">Date : {{ $nbrfour->date }}</p>
+                     @endforeach
                 </div>
               </div>
               <div class="col-4 text-end">
@@ -80,9 +86,9 @@
             <div class="row">
               <div class="col-8">
                 <div class="numbers">
-                  <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
+                  <p class="text-sm mb-0 text-capitalize font-weight-bold">Payments number</p>
                   <h5 class="font-weight-bolder mb-0">
-                    $103,430
+                    0
                     <span class="text-success text-sm font-weight-bolder">+5%</span>
                   </h5>
                 </div>

@@ -29,8 +29,8 @@
         <div class="login-wrap">
             <div class="form-group">
                 @if(\Session::has('message'))
-            <div style="text-align: center" class="alert alert-danger">{{ \Session::get('message') }}</div>
-            @endif  
+                  <div style="text-align: center" class="alert alert-danger">{{ \Session::get('message') }}</div>
+                @endif  
             <label for="username">Username</label>
             <input type="text" class="form-control btn-round" name="username" placeholder="Username" autofocus>
             </div>

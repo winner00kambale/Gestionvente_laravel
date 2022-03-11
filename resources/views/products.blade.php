@@ -23,7 +23,7 @@
         <div class="form-goup">
              <label for="designation">Designation</label>
              <select name="designationP" id="designationP" class="form-control btn-round">
-              <option value=""></option>
+              <option value=""> -- Selectionner la Categorie</option>
               @foreach ($categ as $item)
                   <option value="{{ $item->designation }}">{{ $item->designation }}</option>
               @endforeach
@@ -40,7 +40,7 @@
         <div class="form-goup">
             <label for="fournisseur">Fournisseur</label>
             <select name="fournisseurP" id="fournisseurP" class="form-control btn-round">
-              <option value=""></option> 
+              <option value=""> -- Selectionner le Fournisseur</option> 
               @foreach ($fournisseur as $item)
                   <option value="{{ $item->prenom }}">{{ $item->prenom }}</option>
               @endforeach

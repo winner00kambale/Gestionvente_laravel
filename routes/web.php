@@ -22,23 +22,23 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[UserController::class,'index'])->name('login.index');
+//Index Routes
+Route::get('/',[UserController::class,'index'])->name('login');
 Route::post('/user/authenticate',[UserController::class,'authenticate'])->name('login.authenticate');
-// Route::get('/',[MasterController::class,'index'])->name('master.index');
-Route::get('/dashboard/index',[MasterController::class,'index'])->name('dashboard.index');
-Route::get('/client/index',[ClientsController::class,'index'])->name('client.index');
-Route::get('/fournisseur/index',[FournisseursController::class,'index'])->name('fournisseur.index');
-Route::get('/products/index',[ProductsController::class,'index'])->name('products.index');
-Route::get('/sale/index',[ProdactSaleController::class,'index'])->name('sale.index');
-Route::get('/alert/stock',[AlertStockController::class,'index'])->name('alert.index');
-
-Route::post('/categorie/store',[CategoriesController::class,'store'])->name('categorie.store');
-Route::post('/clients/store',[ClientsController::class,'store'])->name('clients.store');
-Route::post('/fournisseur/store',[FournisseursController::class,'store'])->name('fournisseur.store');
-Route::post('/alert/store',[AlertStockController::class,'store'])->name('alert.store');
-Route::post('/products/store',[ProductsController::class,'store'])->name('products.store');
-Route::post('/productsale/store',[ProdactSaleController::class,'store'])->name('productsale.store');
-
-Route::post('/client/update',[ClientsController::class,'update'])->name('client.update');
-Route::post('/fournisseurs/update',[FournisseursController::class,'update'])->name('fournisseurs.update');
+Route::get('/dashboard/index',[MasterController::class,'index'])->middleware(['auth'])->name('dashboard.index');
+Route::get('/client/index',[ClientsController::class,'index'])->middleware(['auth'])->name('client.index');
+Route::get('/fournisseur/index',[FournisseursController::class,'index'])->middleware(['auth'])->name('fournisseur.index');
+Route::get('/products/index',[ProductsController::class,'index'])->middleware(['auth'])->name('products.index');
+Route::get('/sale/index',[ProdactSaleController::class,'index'])->middleware(['auth'])->name('sale.index');
+Route::get('/alert/stock',[AlertStockController::class,'index'])->middleware(['auth'])->name('alert.index');
+//Insert Routes
+Route::post('/categorie/store',[CategoriesController::class,'store'])->middleware(['auth'])->name('categorie.store');
+Route::post('/clients/store',[ClientsController::class,'store'])->middleware(['auth'])->name('clients.store');
+Route::post('/fournisseur/store',[FournisseursController::class,'store'])->middleware(['auth'])->name('fournisseur.store');
+Route::post('/alert/store',[AlertStockController::class,'store'])->middleware(['auth'])->name('alert.store');
+Route::post('/products/store',[ProductsController::class,'store'])->middleware(['auth'])->name('products.store');
+Route::post('/productsale/store',[ProdactSaleController::class,'store'])->middleware(['auth'])->name('productsale.store');
+//Update Routes
+Route::post('/client/update',[ClientsController::class,'update'])->middleware(['auth'])->name('client.update');
+Route::post('/fournisseurs/update',[FournisseursController::class,'update'])->middleware(['auth'])->name('fournisseurs.update');
 

@@ -28,7 +28,7 @@
             <td>{{ $ligne->shop }}</td>
             <td>{{ $ligne->telephone }}</td>
             <td>
-               <button type="button" id="button" class="btn edit">Modifier</button>
+               <button type="button" id="button" class="btn edit">Edit</button>
             </td>
       </tr>
       @endforeach
@@ -45,33 +45,40 @@
            </div>
            <div class="modal-body">
                <form id="monformulaire">
-                   <div class="form-group">
-                       <label for="nom">nom</label>
-                       <input type="text" name="nom" id="nom" class="form-control btn-round">
-                       <label for="postnom">postnom</label>
-                       <input type="text" name="postnom" id="prenom" class="form-control btn-round">
-                       <label for="prenom">prenom</label>
-                       <input type="text" name="prenom" id="prenom" class="form-control btn-round">
-                       <label for="sexe">sexe</label>
-                       <select name="sexe" id="sexe" class="form-control btn-round">
-                           <option value="m">M</option>
-                           <option value="f">F</option>
-                       </select>
-                       <label for="quartier">Adresse</label>
-                       <input type="text" name="adresse" id="adresse" class="form-control btn-round">
-                       <label for="shop">Shop</label>
-                       <input type="text" name="shop" id="shop" class="form-control btn-round">
-                       <label for="telephone">telephone</label>
-                       <input type="tel" name="telephone" id="telephone" class="form-control btn-round">
+                   <div class="row">
+                       <div class="col-md-6">
+                           <div class="form-group">
+                            <label for="nom">nom</label>
+                            <input type="text" name="nom" id="nom" class="form-control btn-round">
+                            <label for="postnom">postnom</label>
+                            <input type="text" name="postnom" id="prenom" class="form-control btn-round">
+                            <label for="prenom">prenom</label>
+                            <input type="text" name="prenom" id="prenom" class="form-control btn-round">
+                            <label for="sexe">sexe</label>
+                            <select name="sexe" id="sexe" class="form-control btn-round">
+                                <option value="m">M</option>
+                                <option value="f">F</option>
+                            </select>
+                           </div>
+                       </div>
+                       <div class="col-md-6">
+                            <div class="form-group"> 
+                                <label for="quartier">Adresse</label>
+                                <input type="text" name="adresse" id="adresse" class="form-control btn-round">
+                                <label for="shop">Shop</label>
+                                <input type="text" name="shop" id="shop" class="form-control btn-round">
+                                <label for="telephone">telephone</label>
+                                <input type="tel" name="telephone" id="telephone" class="form-control btn-round">
+                            </div>
+                        <input type="submit" id="button" value="Enregistrer" class="btn btn-info btn-round">
+                       </div>
                    </div>
-                   <input type="submit" id="button" value="Enregistrer" class="btn btn-info btn-round">
                </form>
            </div>
        </div>
    </div>
 </div>
 <!-- modal-star modification -->
-
 <div class="modal fade" id="Modalmodif" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -82,27 +89,36 @@
             <div class="modal-body">
                 <form method="POST" action="{{ route('fournisseurs.update') }}">
                     @csrf
-                    <div class="form-group">
-                      <input type="hidden" name="id" id="id">
-                        <label for="nom">nom</label>
-                        <input type="text" name="nom" id="mod_nom" class="form-control btn-round">
-                        <label for="postnom">postnom</label>
-                        <input type="text" name="postnom" id="mod_postnom" class="form-control btn-round">
-                        <label for="prenom">prenom</label>
-                        <input type="text" name="prenom" id="mod_prenom" class="form-control btn-round">
-                        <label for="sexe">sexe</label>
-                        <select name="sexe" id="mod_sexe" class="form-control btn-round">
-                            <option value="m">M</option>
-                            <option value="f">F</option>
-                        </select>
-                        <label for="quartier">Adresse</label>
-                        <input type="text" name="adresse" id="mod_adresse" class="form-control btn-round">
-                        <label for="shop">Shop</label>
-                        <input type="text" name="shop" id="mod_shop" class="form-control btn-round">
-                        <label for="telephone">telephone</label>
-                        <input type="tel" name="telephone" id="mod_telephone" class="form-control btn-round">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="hidden" name="id" id="id">
+                                <label for="nom">nom</label>
+                                <input type="text" name="nom" id="mod_nom" class="form-control btn-round">
+                                <label for="postnom">postnom</label>
+                                <input type="text" name="postnom" id="mod_postnom" class="form-control btn-round">
+                                <label for="prenom">prenom</label>
+                                <input type="text" name="prenom" id="mod_prenom" class="form-control btn-round">
+                                <label for="sexe">sexe</label>
+                                <select name="sexe" id="mod_sexe" class="form-control btn-round">
+                                    <option value="m">M</option>
+                                    <option value="f">F</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <br>
+                            <div class="form-group">
+                                <label for="quartier">Adresse</label>
+                                <input type="text" name="adresse" id="mod_adresse" class="form-control btn-round">
+                                <label for="shop">Shop</label>
+                                <input type="text" name="shop" id="mod_shop" class="form-control btn-round">
+                                <label for="telephone">telephone</label>
+                                <input type="tel" name="telephone" id="mod_telephone" class="form-control btn-round">
+                            </div>
+                            <input type="submit"  value="Modifier" id="button" class="btn btn-round">
+                        </div>
                     </div>
-                    <input type="submit"  value="Modifier" id="button" class="btn btn-round">
                 </form>
             </div>
         </div>
