@@ -69,13 +69,13 @@
             @foreach($product as $pro)
                 <tr>
                     <td>{{ $pro->id }}</td>
-                    <td>{{ $pro->category_id }}</td> 
+                    <td>{{ $pro->Produit }}</td> 
                     <td>{{ $pro->nombre }}</td>
                     <td>{{ $pro->montant }}</td>
-                    <td>{{ $pro->fournisseur_id }}</td>
+                    <td>{{ $pro->Fournisseur }}</td>
                     <td>{{ $pro->dates }}</td>
                     <td>
-                    <button type="button" id="button" class="btn btn-info edit">edit</button> |
+                    <button type="button" id="button" class="btn btn-info edit">edit</button>
                     </td>
                 </tr>
            @endforeach

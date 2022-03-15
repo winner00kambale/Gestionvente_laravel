@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class ProdactSaleController extends Controller
 {
     public function index(){
-        $sale = \DB::select("SELECT * FROM products_sale order by id DESC");
+        $sale = \DB::select("SELECT * FROM aff_vente order by id DESC");
         $stock = \DB::select("SELECT * FROM stock order by id DESC");
         $panier = \DB::select("SELECT * FROM panier order by id DESC");
         $client = \DB::select("SELECT * FROM clients order by id ASC");
@@ -30,5 +30,9 @@ class ProdactSaleController extends Controller
         return back()->with('message','insertion avec succes');
         //return redirect()->route('products.index')->with('message','insertion avec succes');
         // return response()->json(['message' => 'inserted succes']);   
+    }
+    public function store_fac(){
+        \DB::statement("call sp_facture()");
+        return back()->with('message','Facture enregistree');
     }
 }

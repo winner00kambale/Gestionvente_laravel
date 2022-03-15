@@ -110,7 +110,7 @@
     <div class="col-7">
         <div id="dash" class=" pt-2 container">
             <h3 style="color: brown">Alert Stock</h3>
-            <table class="table table-striped table-hover table-sm table-bordered">
+            <table class="table align-items-center mb-0 table-striped table-hover">
                 <thead>
                     <tr>
                         <th>#</th>

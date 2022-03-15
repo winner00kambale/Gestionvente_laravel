@@ -13,7 +13,7 @@ class Caisse extends Migration
      */
     public function up()
     {
-        Schema::create('Caisse', function (Blueprint $table) {
+        Schema::create('Caisses', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('montant');
         });
@@ -26,6 +26,6 @@ class Caisse extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Caisse');
+        Schema::dropIfExists('Caisses');
     }
 }

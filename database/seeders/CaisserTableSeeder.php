@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Caissers;
+use App\Models\Caisse;
 
 class CaisserTableSeeder extends Seeder
 {
@@ -14,7 +14,7 @@ class CaisserTableSeeder extends Seeder
      */
     public function run()
     {
-        Caissers::create([
+        Caisse::create([
             'montant' => '10000'
         ]);
     }

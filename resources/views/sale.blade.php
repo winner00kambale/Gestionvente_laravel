@@ -16,8 +16,8 @@
             @foreach($sale as $pro)
                 <tr>
                     <td>{{ $pro->id }}</td>
-                    <td>{{ $pro->client_id }}</td>
-                    <td>{{ $pro->category_id }}</td>
+                    <td>{{ $pro->Client }}</td>
+                    <td>{{ $pro->Produit }}</td>
                     <td>{{ $pro->nombre }}</td>
                     <td>{{ $pro->montant }}</td>
                     <td>{{ $pro->dates }}</td>
@@ -53,22 +53,30 @@
       <br>
         <a class="btn btn-danger btn-round" style="margin-left: 250px;" href="#">Facture</a>
         <h4>Panier</h4>
+        @if(\Session::has('message'))
+                  <div style="text-align: center" class="alert alert-danger">{{ \Session::get('message') }}</div>
+                @endif
     <table class="table table-striped table-hover table-sm table-bordered">
         <thead>
-            <th >#</th>
             <th >client</th>
             <th >article</th>
             <th >nombre</th>
             <th >montant</th>
+            <th >Param</th>
         </thead>
         <tbody>
             @foreach($panier as $pan)
                 <tr>
-                    <td>{{ $pan->id }}</td>
                     <td>{{ $pan->client }}</td>
                     <td>{{ $pan->article }}</td>
                     <td>{{ $pan->nombre }}</td>
                     <td>{{ $pan->montant }}</td>
+                    <td>
+                        <form action="{{ route('facture.store') }}" method="POST">
+                            @csrf
+                        <input type="submit" class="btn btn-danger round" value="Save fac">
+                        </form>
+                    </td>
                 </tr>
             @endforeach          
         </tbody>

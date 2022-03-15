@@ -58,7 +58,7 @@
                 <ul class="sub">
                   <li><a href="{{ route('client.index') }}">Client</a></li>
                   <li><a href="{{ route('fournisseur.index') }}">Fournisseur</a></li>
-                  <li><a href="#">Comptabilite</a></li>
+                  <li><a href="{{ route('factures.index') }}">Comptabilite</a></li>
                 </ul>
               </li>
               <li class="sub-menu">
