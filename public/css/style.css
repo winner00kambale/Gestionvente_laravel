@@ -3518,14 +3518,14 @@ ul.chat-available-user li a:hover {
 .flot-chart .chart,
 .flot-chart .pie,
 .flot-chart .bars {
-    height: 300px;
+    height: 200px;
 }
 
 
 /*xchart*/
 
 .demo-xchart {
-    height: 400px;
+    height: 130px;
     width: 100%;
 }
 
@@ -3598,7 +3598,7 @@ ul.chat-available-user li a:hover {
 #dash {
     border: 2px solid #e7e7e7;
     border-radius: 20px;
-    height: 200px;
+    height: 220px;
     background: #ffffff;
     overflow-y: scroll;
 }

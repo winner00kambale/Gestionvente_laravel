@@ -12,6 +12,7 @@ use App\Http\Controllers\AlertStockController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PaymentsController;
+use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,14 +26,16 @@ use App\Http\Controllers\PaymentsController;
 */
 //Index Routes
 Route::get('/',[UserController::class,'index'])->name('login');
-Route::post('/user/authenticate',[UserController::class,'authenticate'])->name('login.authenticate');
-Route::get('/dashboard/index',[MasterController::class,'index'])->middleware(['auth'])->name('dashboard.index');
-Route::get('/client/index',[ClientsController::class,'index'])->middleware(['auth'])->name('client.index');
+Route::post('/user/authenticate',[UserController::class, 'authenticate'])->name('login.authenticate');
+Route::get('/dashboard/index',[MasterController::class, 'index'])->middleware(['auth'])->name('dashboard.index');
+Route::get('/client/index',[ClientsController::class, 'index'])->middleware(['auth'])->name('client.index');
 Route::get('/fournisseur/index',[FournisseursController::class,'index'])->middleware(['auth'])->name('fournisseur.index');
-Route::get('/products/index',[ProductsController::class,'index'])->middleware(['auth'])->name('products.index');
-Route::get('/sale/index',[ProdactSaleController::class,'index'])->middleware(['auth'])->name('sale.index');
-Route::get('/alert/stock',[AlertStockController::class,'index'])->middleware(['auth'])->name('alert.index');
-Route::get('/factures/stock',[PaymentsController::class,'index'])->middleware(['auth'])->name('factures.index');
+Route::get('/products/index',[ProductsController::class, 'index'])->middleware(['auth'])->name('products.index');
+Route::get('/sale/index',[ProdactSaleController::class, 'index'])->middleware(['auth'])->name('sale.index');
+Route::get('/alert/stock',[AlertStockController::class, 'index'])->middleware(['auth'])->name('alert.index');
+Route::get('/factures/stock',[PaymentsController::class, 'index'])->middleware(['auth'])->name('factures.index');
+Route::get('pdf', [PdfController::class, 'index'])->middleware(['auth'])->name('PDF.index');
+Route::get('rapport/index', [PdfController::class, 'index_journ'])->middleware(['auth'])->name('rapport.index');
 //Insert Routes
 Route::post('/categorie/store',[CategoriesController::class,'store'])->middleware(['auth'])->name('categorie.store');
 Route::post('/clients/store',[ClientsController::class,'store'])->middleware(['auth'])->name('clients.store');

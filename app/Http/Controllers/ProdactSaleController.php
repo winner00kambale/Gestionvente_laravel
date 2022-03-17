@@ -21,18 +21,26 @@ class ProdactSaleController extends Controller
             'nombre' => 'required',
             'montant' => 'required',
         ]);
-        \DB::statement("call sp_vente(?,?,?,?)",[
-            $request->client,
-            $request->designation,
-            $request->nombre,
-            $request->montant
-        ]);
-        return back()->with('message','insertion avec succes');
-        //return redirect()->route('products.index')->with('message','insertion avec succes');
-        // return response()->json(['message' => 'inserted succes']);   
+        try {
+            \DB::statement("call sp_vente(?,?,?,?)",[
+                $request->client,
+                $request->designation,
+                $request->nombre,
+                $request->montant
+            ]);
+            return back()->with('message','insertion avec succes');
+        } catch (\Illuminate\Database\QueryException $e) {
+            $errorCode = $e->errorInfo[1];
+            if($errorCode == '1062'){
+                return back()->with('error', 'erreur');
+             }
+            else{
+             return back()->with('error', 'Impossible de passer cette operation. Veillez approvisionner svp !');
+            }
+        }           
     }
     public function store_fac(){
         \DB::statement("call sp_facture()");
-        return back()->with('message','Facture enregistree');
+        return back()->with('message','Facture enregistree');       
     }
 }

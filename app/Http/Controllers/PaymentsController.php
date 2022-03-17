@@ -21,12 +21,23 @@ class PaymentsController extends Controller
             'montant' => 'required',
             'libelle' => 'required',
         ]);
-        \DB::statement("call sp_payment(?,?,?,?)",[
-            $request->facture,
-            $request->nom,
-            $request->montant,
-            $request->libelle
-        ]);
-        return back()->with('message','insertion avec succes');   
+        try {
+            \DB::statement("call sp_payment(?,?,?,?)",[
+                $request->facture,
+                $request->nom,
+                $request->montant,
+                $request->libelle
+            ]);
+            return back()->with('message','payment succes');
+        } catch (\Illuminate\Database\QueryException $e) {
+            $errorCode = $e->errorInfo[1];
+            if($errorCode == '1062'){
+                return back()->with('error', 'Cette facture a deja ete payee !');
+             }
+            else{
+             return back()->with('error', 'Cette facture a deja ete payee !');
+            }
+        }
+           
     }
 }
