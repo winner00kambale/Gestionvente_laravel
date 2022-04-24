@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class AlertStockController extends Controller
 {
     public function index(){
         $stockAlerte = \DB::select("SELECT * FROM alertstock order by id DESC");
-        return view('parametter',compact('stockAlerte'));
+        $users = User::All();
+        return view('parametter',compact('stockAlerte','users'));
     }
     public function store(Request $request){
         $request->validate([

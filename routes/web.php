@@ -37,6 +37,7 @@ Route::get('/factures/stock',[PaymentsController::class, 'index'])->middleware([
 Route::get('pdf', [PdfController::class, 'index'])->middleware(['auth'])->name('PDF.index');
 Route::get('rapport/index', [PdfController::class, 'index_journ'])->middleware(['auth'])->name('rapport.index');
 //Insert Routes
+Route::post('users/store',[UserController::class, 'store'])->middleware(['auth'])->name('users.store');
 Route::post('/categorie/store',[CategoriesController::class,'store'])->middleware(['auth'])->name('categorie.store');
 Route::post('/clients/store',[ClientsController::class,'store'])->middleware(['auth'])->name('clients.store');
 Route::post('/fournisseur/store',[FournisseursController::class,'store'])->middleware(['auth'])->name('fournisseur.store');
@@ -46,6 +47,7 @@ Route::post('/productsale/store',[ProdactSaleController::class,'store'])->middle
 Route::post('/facture/store',[ProdactSaleController::class,'store_fac'])->middleware(['auth'])->name('facture.store');
 Route::post('/payment/store',[PaymentsController::class,'store'])->middleware(['auth'])->name('payment.index');
 //Update Routes
+Route::post('users/update',[UserController::class, 'update'])->middleware(['auth'])->name('users.update');
 Route::post('/client/update',[ClientsController::class,'update'])->middleware(['auth'])->name('client.update');
 Route::post('/fournisseurs/update',[FournisseursController::class,'update'])->middleware(['auth'])->name('fournisseurs.update');
 
